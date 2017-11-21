@@ -13,24 +13,25 @@ class IndexController extends Controller {
      * 对于如下的例子, 当访问http://yourhost/ys/index/index/index/name/root 的时候, 你就会发现不同
      */
 	public function indexAction($name = "Stranger") {
+	    echo 'haha';
 
-        if($_SESSION['user_info']){
-
-            // $this->getView()->assign('user', $_SESSION['user_info']);
-
-            // $this->getView()->assign('apps', $_SESSION['apps']);
-
-            // $sCache = SCacheModel::getInstance();
-
-            // $apps = $sCache->get('apps');
-
-            // $this->getView()->assign('apps_info', $apps);
-
-        }else{
-
-            $this->redirect("/Login");
-
-        }
+//        if($_SESSION['user_info']){
+//
+//            // $this->getView()->assign('user', $_SESSION['user_info']);
+//
+//            // $this->getView()->assign('apps', $_SESSION['apps']);
+//
+//            // $sCache = SCacheModel::getInstance();
+//
+//            // $apps = $sCache->get('apps');
+//
+//            // $this->getView()->assign('apps_info', $apps);
+//
+//        }else{
+//
+//            $this->redirect("/Login");
+//
+//        }
 
 	}
 
