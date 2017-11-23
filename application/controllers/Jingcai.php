@@ -4,6 +4,10 @@ class JingcaiController extends Controller {
     {
         Yaf_Dispatcher::getInstance()->disableView();
         $cid = (int)$_GET['cid'];
+        if (!$cid) {
+            $this->echoJson('2000');
+            return;
+        }
         $MJingCai = new JingCaiModel();
         $level = $MJingCai->level($cid);
         if (!$level) {
@@ -17,13 +21,18 @@ class JingcaiController extends Controller {
     {
         Yaf_Dispatcher::getInstance()->disableView();
         $id = (int)$_GET['id'];
+        if (!$id) {
+            $this->echoJson('2000');
+            return;
+        }
         $MJingCai = new JingCaiModel();
         $question = $MJingCai->question($id);
-        $question['pic'] = 'http://' . $_SERVER['HTTP_HOST'] . $question['pic'];
+
         if (!$question) {
             $this->echoJson('2000');
             return;
         }
+        $question['pic'] = 'http://' . $_SERVER['HTTP_HOST'] . $question['pic'];
         $this->echoJson('1000', '', $question);
     }
 
