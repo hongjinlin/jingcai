@@ -7,7 +7,7 @@ $config = array(
     'apc_key'           => 'yaoeyao-dev',
 
     'white_controller'  => array(
-        'Index', 'Login', 'User' , 'Logout', 'Auth'
+        'Index', 'Login', 'User' , 'Logout', 'Auth', 'Jingcai'
     ),
 
     'home_url'          => 'http://dev.yaoeyao.cn',

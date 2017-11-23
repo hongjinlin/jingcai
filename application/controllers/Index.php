@@ -13,7 +13,8 @@ class IndexController extends Controller {
      * 对于如下的例子, 当访问http://yourhost/ys/index/index/index/name/root 的时候, 你就会发现不同
      */
 	public function indexAction($name = "Stranger") {
-	    echo 'haha';
+        Yaf_Dispatcher::getInstance()->disableView();
+	    echo 'hahaf';
 
 //        if($_SESSION['user_info']){
 //
