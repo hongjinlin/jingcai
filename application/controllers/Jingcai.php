@@ -4,7 +4,7 @@ class JingcaiController extends Controller {
     {
         Yaf_Dispatcher::getInstance()->disableView();
         $cid = (int)$_GET['cid'];
-        $MJingCai = new JingcaiModel();
+        $MJingCai = new JingCaiModel();
         $level = $MJingCai->level($cid);
         if (!$level) {
             $this->echoJson('2000');
@@ -17,7 +17,7 @@ class JingcaiController extends Controller {
     {
         Yaf_Dispatcher::getInstance()->disableView();
         $id = (int)$_GET['id'];
-        $MJingCai = new JingcaiModel();
+        $MJingCai = new JingCaiModel();
         $question = $MJingCai->question($id);
         $question['pic'] = 'http://' . $_SERVER['HTTP_HOST'] . $question['pic'];
         if (!$question) {
