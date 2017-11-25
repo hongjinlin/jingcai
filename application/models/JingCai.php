@@ -35,4 +35,21 @@ class JingcaiModel
         }
         return $rzt;
     }
+
+    public function getAllCorrectAnswer($cid, $id)
+    {
+        $this->dbr->select('correct_answer');
+        $this->dbr->from('level');
+        $this->dbr->where('cid', $cid);
+        $this->dbr->where('id !=', $id);
+        $rzt = $this->dbr->get()->result_array();
+        if (!$rzt) {
+            return false;
+        }
+        $data = array_map(function ($v) {
+            return $v['correct_answer'];
+        }, $rzt);
+        $data = implode('', $data);
+        return $data;
+    }
 }
